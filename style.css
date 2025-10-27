@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-green: #596D48;
+  --input-border: #E5E7EB;
+  --focus-blue: #4F46E5;
+  --invalid-red: #DC2626;
+  --text-dark: #1F2937;
+  --text-light: #6B7280;
+  --bg-light: #F9FAFB;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  height: 100vh;
+  color: var(--text-dark);
+}
+
+/* Main container layout */
+.container {
+  display: flex;
+  height: 100%;
+}
+
+/* Sidebar with background image */
+.sidebar {
+  flex: 0 0 40%;
+  background-image: url('https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Dark overlay for better text readability */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Logo banner styling */
+.logo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1.5rem 3rem;
+  margin-top: 20vh;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.logo-icon {
+  height: 6rem;
+  filter: brightness(0) invert(1);
+}
+
+.logo-text {
+  font-family: 'Norse Bold', serif;
+  font-size: 5rem;
+  color: white;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+
+/* Photo credit */
+.photo-credit {
+  color: white;
+  font-size: 0.875rem;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.photo-credit a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-light);
+}
+
+/* Introduction section */
+.intro {
+  padding: 3rem 3rem 2rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 50rem;
+}
+
+.intro p {
+  margin-bottom: 1rem;
+}
+
+/* Form section */
+.form-section {
+  background-color: white;
+  padding: 2rem 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+/* Form layout */
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 50rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Input groups */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.input-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dark);
+}
+
+.input-group input {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--input-border);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+/* Focus state for inputs */
+.input-group input:focus {
+  outline: none;
+  border-color: var(--focus-blue);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Invalid state for inputs */
+.input-group input:invalid:not(:placeholder-shown) {
+  border-color: var(--invalid-red);
+}
+
+/* Submit section */
+.submit-section {
+  padding: 2rem 3rem;
+  max-width: 50rem;
+}
+
+.submit-btn {
+  background-color: var(--primary-green);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.875rem 3rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+  background-color: #4a5a3a;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-link {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.login-link a {
+  color: var(--primary-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    flex: 0 0 30vh;
+  }
+
+  .logo-banner {
+    margin-top: 5vh;
+    padding: 1rem 2rem;
+  }
+
+  .logo-icon {
+    height: 3rem;
+  }
+
+  .logo-text {
+    font-size: 2.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .intro,
+  .form-section,
+  .submit-section {
+    padding: 1.5rem;
+  }
+}

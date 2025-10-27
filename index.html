@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Norse+Bold&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Left sidebar with background image and logo -->
+    <aside class="sidebar">
+      <div class="logo-banner">
+        <img src="https://www.theodinproject.com/assets/odin-logo-bd1d4ba7c5c2e1fc8066f84b3155f2c07e12173f4647fc9986a9a0498a520946.svg" alt="Odin Logo" class="logo-icon">
+        <h1 class="logo-text">ODIN</h1>
+      </div>
+      <p class="photo-credit">
+        Photo by <a href="https://unsplash.com/@haliewestphoto" target="_blank">Halie West</a> on <a href="https://unsplash.com" target="_blank">Unsplash</a>
+      </p>
+    </aside>
+
+    <!-- Main content area with form -->
+    <main class="main-content">
+      
+      <!-- Introduction section -->
+      <section class="intro">
+        <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.</p>
+        <p>Sign up <em>now</em> to get started.</p>
+        <p>You <em>know</em> you want to.</p>
+      </section>
+
+      <!-- Form section -->
+      <section class="form-section">
+        <h2>Let's do this!</h2>
+        
+        <form action="#" method="post" id="signup-form">
+          <div class="form-row">
+            <div class="input-group">
+              <label for="first-name">First Name</label>
+              <input 
+                type="text" 
+                id="first-name" 
+                name="first-name" 
+                required
+                minlength="2"
+              >
+            </div>
+
+            <div class="input-group">
+              <label for="last-name">Last Name</label>
+              <input 
+                type="text" 
+                id="last-name" 
+                name="last-name" 
+                required
+                minlength="2"
+              >
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="email">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+              >
+            </div>
+
+            <div class="input-group">
+              <label for="phone">Phone Number</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                placeholder="123-456-7890"
+              >
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                required
+                minlength="8"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              >
+            </div>
+
+            <div class="input-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input 
+                type="password" 
+                id="confirm-password" 
+                name="confirm-password" 
+                required
+                minlength="8"
+              >
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Submit section -->
+      <section class="submit-section">
+        <button type="submit" form="signup-form" class="submit-btn">Create Account</button>
+        <p class="login-link">Already have an account? <a href="#">Log in</a></p>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
